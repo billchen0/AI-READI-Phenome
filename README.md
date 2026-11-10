@@ -1,4 +1,4 @@
-# AI ReadyPhenomen
+# AI-READI Phenome
 
 An interactive 3D showcase of the AI-READI dataset. Explore sensors on a full-body mannequin, switch to organ context, and open compact views of wearable signals, ECG, laboratory results, and clinical assessments.
 
