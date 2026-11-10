@@ -29,4 +29,4 @@ The [documentation repository license](https://github.com/AI-READI/ai-readi-docs
 - [LeeLab Anura and environmental example values](https://docs.aireadi.org/docs/3/dataset/environment/)
 - [Official MoCA reference](https://mocacognition.com/faq)
 
-The AI-READI dataset has separate access and redistribution terms. No participant records are licensed or distributed by this repository.
+The AI-READI dataset has separate access and redistribution terms. No participant records are distributed by this repository. Numerical examples are generated independently from generic formulas and hand-selected illustrative values.

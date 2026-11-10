@@ -1,71 +1,29 @@
 # AI-READI Phenome
 
-An interactive 3D showcase of the AI-READI dataset. Explore sensors on a full-body mannequin, switch to organ context, and open compact views of wearable signals, ECG, laboratory results, and clinical assessments.
-
-Built with React, TypeScript, Three.js, React Three Fiber, and Vite.
+Explore AI-READI sensors, signals, and clinical assessments through an interactive 3D body. Synthetic signals and values based on the AI-READI format are included, so every view is available immediately.
 
 ## Run locally
 
-Requires Node.js 22.18 or newer and npm.
+Install [Node.js](https://nodejs.org/) 22.18 or newer, which includes npm. Then open a terminal and run:
 
 ```sh
+git clone https://github.com/billchen0/AI-READI-Phenome.git
+cd AI-READI-Phenome
 npm ci
 npm run dev
 ```
 
-Open the local URL printed by Vite. Without a dataset connection, recorded measurements display as unavailable. Environmental example values and retinal images come from the public AI-READI documentation and are labeled accordingly.
+Open [http://localhost:5173](http://localhost:5173) in your browser. Drag to rotate the body, use the zoom controls, and select a sensor or organ to open its measurements. **All modalities** lists every view. Press `Ctrl+C` in the terminal to stop the app.
 
-## Connect licensed data
-
-Participant records are not included. A separately obtained, authorized local copy of AI-READI v3 is required to display recordings.
-
-Requires Python 3.11 or newer.
-
-1. Create a Python environment and install the extractor dependencies:
-
-   ```sh
-   python3 -m venv .venv
-   .venv/bin/python -m pip install -r requirements.txt
-   ```
-
-2. Set the dataset and output locations outside this repository:
-
-   ```sh
-   export AI_READI_SAMPLE_DIR=/absolute/path/to/ai-readi-y3
-   export AI_READI_PREVIEW_JSON=/absolute/path/to/private-preview/preview.json
-   .venv/bin/python scripts/build_local_preview.py
-   ```
-
-3. Copy `.env.example` to `.env.local`, set the same paths, and restart `npm run dev`.
-
-Recordings are served only through a development endpoint on the loopback interface. Production builds do not contain the endpoint or participant values. See [data access](docs/data-access.md) for extraction rules and limitations.
-
-## Checks
+## Build and preview
 
 ```sh
-npm run check
-npm run test:python
+npm run build
+npm run preview
 ```
 
-`check` runs formatting, TypeScript tests, the production build, and the organ geometry audit. Python tests use temporary fixtures and do not need participant data. For Python formatting, install `requirements-dev.txt` and run `ruff format scripts tests`.
+Open [http://localhost:4173](http://localhost:4173). The production files are written to `dist/`.
 
-## Project structure
+## Sources
 
-- `src/components/details/` — measurement index and detail cards
-- `src/components/scene/` — wearable and organ geometry
-- `src/context/` — local recording state
-- `src/data/` — modality definitions and anatomical placement
-- `src/lib/` — chart formatting and geometry utilities
-- `scripts/` — local data extraction and anatomy audit
-- `tests/` — regression tests and numerical fixtures
-- `public/assets/` — licensed mannequin, organ models, and documentation images
-
-The anatomy is an educational visualization fitted to a generic mannequin, not a registered clinical atlas. Clinical measurements and independent examples must not be interpreted as one person's profile.
-
-## References and media
-
-- [AI-READI dataset documentation](https://docs.aireadi.org/docs/3/about)
-- [Architecture](docs/architecture.md)
-- [Asset attribution and data provenance](docs/assets.md)
-
-Dataset access and media licenses are separate from the application source. See the attribution document before redistributing assets or data.
+Retinal images are attributed examples from the AI-READI documentation. See [asset credits](docs/assets.md) for image and 3D-model sources.

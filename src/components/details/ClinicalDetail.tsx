@@ -2,7 +2,7 @@ import { CardActions } from '../CardActions'
 import { useShowcaseData } from '../../context/ShowcaseData'
 import type { ClinicalTab } from '../../types'
 import { CardHeader } from '../CardHeader'
-import { RecordedRows } from '../RecordedClinical'
+import { MeasurementTable } from '../MeasurementTable'
 import { RetinalImaging } from '../RetinalImaging'
 
 export function ClinicalDetail({
@@ -12,7 +12,7 @@ export function ClinicalDetail({
   tab: ClinicalTab
   onOpenIndex: () => void
 }) {
-  const { data } = useShowcaseData()
+  const data = useShowcaseData()
   return (
     <>
       <CardHeader
@@ -21,7 +21,7 @@ export function ClinicalDetail({
         }
         source={tab === 'retinal' ? 'AI-READI documentation examples' : undefined}
       />
-      {tab === 'retinal' ? <RetinalImaging /> : <RecordedRows view={data?.clinical?.[tab]} />}
+      {tab === 'retinal' ? <RetinalImaging /> : <MeasurementTable view={data.clinical[tab]} />}
       <CardActions onOpenIndex={onOpenIndex} />
     </>
   )

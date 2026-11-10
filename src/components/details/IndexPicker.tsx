@@ -1,4 +1,3 @@
-import { useShowcaseData } from '../../context/ShowcaseData'
 import { CLINICAL_TABS, GROUP_LABELS, MODALITIES } from '../../data/modalities'
 import { ORGANS } from '../../data/organs'
 import type { ClinicalTab, ModalityId, OrganId } from '../../types'
@@ -14,15 +13,8 @@ export function IndexPicker({
   onSelectOrgan: (organ: OrganId) => void
   onSelectEnvironment: () => void
 }) {
-  const showcase = useShowcaseData()
   return (
     <>
-      <p className="overlay-lede">
-        {showcase.mode === 'local'
-          ? 'Independent recorded examples, not a single participant. Retinal images are documentation examples.'
-          : 'Recorded examples require the local dataset connection.'}
-      </p>
-
       <section className="picker-group" aria-labelledby="picker-measured">
         <h3 id="picker-measured">Measured modalities</h3>
         <div className="picker-list">
@@ -37,11 +29,6 @@ export function IndexPicker({
                 <span className="picker-label">{modality.label}</span>
                 <span className="picker-meta">
                   {GROUP_LABELS[modality.group]} · {modality.unit}
-                  {showcase.mode === 'local'
-                    ? showcase.data?.modalities[modality.id]
-                      ? ' · Recording ready'
-                      : ' · Unavailable'
-                    : ''}
                 </span>
               </span>
             </button>
@@ -101,9 +88,8 @@ export function IndexPicker({
       </section>
 
       <details className="source-list">
-        <summary>Documentation examples</summary>
+        <summary>Image sources</summary>
         <ul>
-          <li>Environment · example values from the data dictionary</li>
           <li>Retinal imaging · published fundus and OCT figures</li>
         </ul>
       </details>

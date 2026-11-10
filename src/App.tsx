@@ -127,6 +127,8 @@ export default function App() {
         </div>
       </main>
 
+      <p className="scene-disclosure">Synthetic data · AI-READI format</p>
+
       <DetailOverlay
         active={active}
         onSelectModality={selectModality}

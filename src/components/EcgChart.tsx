@@ -142,7 +142,7 @@ export function EcgChart({ view }: { view: EcgView }) {
       </div>
 
       <section className="ecg-morphology">
-        <h3>Device-generated morphology</h3>
+        <h3>Morphology summary</h3>
         {view.measurements?.length ? (
           <dl>
             {view.measurements.map((row) => (
@@ -157,7 +157,6 @@ export function EcgChart({ view }: { view: EcgView }) {
         ) : (
           <p>Rate, PR, QRS duration, QT/QTc, and P/QRS/T axes are included in the device report.</p>
         )}
-        <p className="card-note">Automated measurements · not physician reviewed</p>
       </section>
       <p className="sr-only">{summary}</p>
     </figure>

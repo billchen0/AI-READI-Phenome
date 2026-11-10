@@ -17,8 +17,8 @@ export function ModalityDetail({
   onOpenIndex: () => void
 }) {
   const def = MODALITY_BY_ID.get(modality)
-  const { data, status } = useShowcaseData()
-  const view = data?.modalities[modality]
+  const data = useShowcaseData()
+  const view = data.modalities[modality]
   if (!def) return null
   const source =
     def.group === 'wrist'
@@ -43,11 +43,7 @@ export function ModalityDetail({
           ))}
         </div>
       ) : null}
-      {!view ? (
-        <p className="detail-note" role="status">
-          {status === 'loading' ? 'Loading…' : 'Recording unavailable.'}
-        </p>
-      ) : view.kind === 'ecg' ? (
+      {view.kind === 'ecg' ? (
         <EcgChart view={view} />
       ) : view.kind === 'categories' ? (
         <SleepTimeline view={view} />

@@ -40,12 +40,11 @@ export interface EcgView {
 
 export type ModalityView = SeriesView | CategoriesView | EcgView
 
-export interface PreviewPayload {
-  clinical?: Partial<Record<'labs' | 'surveys' | 'nervous' | 'cognitive', LabView>>
-  environment?: LabView | null
+export interface ShowcasePayload {
+  clinical: Record<'labs' | 'surveys' | 'nervous' | 'cognitive', LabView>
+  environment: LabView
   source?: string
-  modalities: Partial<Record<ModalityId, ModalityView>>
-  missing?: ModalityId[]
+  modalities: Record<ModalityId, ModalityView>
 }
 export interface LabRow {
   label: string

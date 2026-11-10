@@ -2037,21 +2037,21 @@ a {
   font: 12px/1.5 var(--mono);
   overflow-wrap: anywhere;
 }
-.recorded-table-wrap {
+.measurement-table-wrap {
   width: 100%;
   margin: 12px 0;
   overflow: visible;
 }
-.recorded-table-wrap .clinical-table {
+.measurement-table-wrap .clinical-table {
   min-width: 0;
   table-layout: fixed;
 }
-.recorded-table-wrap .clinical-table th:first-child {
+.measurement-table-wrap .clinical-table th:first-child {
   width: 52%;
   overflow-wrap: anywhere;
 }
-.recorded-table-wrap .clinical-table th,
-.recorded-table-wrap .clinical-table td {
+.measurement-table-wrap .clinical-table th,
+.measurement-table-wrap .clinical-table td {
   white-space: normal;
   overflow-wrap: anywhere;
 }
@@ -2151,4 +2151,23 @@ a {
   width: 23px;
   transform: rotate(-48deg);
   transform-origin: right center;
+}
+
+.scene-disclosure {
+  position: fixed;
+  left: 40px;
+  bottom: 24px;
+  z-index: 4;
+  margin: 0;
+  color: #b0c0ba;
+  font: 10px/1.5 var(--mono);
+  letter-spacing: 0.04em;
+}
+@media (max-width: 700px) {
+  .scene-disclosure {
+    left: 18px;
+    bottom: 22px;
+    max-width: 155px;
+    font-size: 9px;
+  }
 }

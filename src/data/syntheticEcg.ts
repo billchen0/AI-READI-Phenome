@@ -1,4 +1,4 @@
-import type { SeriesPoint } from '../../src/types'
+import type { SeriesPoint } from '../types'
 
 export const ECG_LEAD_NAMES = [
   'I',

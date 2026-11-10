@@ -1,16 +1,10 @@
 import type { LabView } from '../types'
 
-export function RecordedRows({ view }: { view?: LabView | null }) {
-  if (!view)
-    return (
-      <p className="detail-note" role="status">
-        Recording unavailable.
-      </p>
-    )
+export function MeasurementTable({ view }: { view: LabView }) {
   return (
-    <div className="recorded-table-wrap">
+    <div className="measurement-table-wrap">
       <table className="clinical-table">
-        <caption className="sr-only">Recorded AI-READI example</caption>
+        <caption className="sr-only">Synthetic example</caption>
         <thead>
           <tr>
             <th scope="col">Measure</th>
