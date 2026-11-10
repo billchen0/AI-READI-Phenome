@@ -1,0 +1,36 @@
+node_modules/
+dist/
+.venv/
+.agent-context/
+__pycache__/
+*.pyc
+.DS_Store
+*.local
+
+# Environment / local-only preview configuration
+.env
+.env.*
+!.env.example
+
+# Restricted AI-READI previews and source data must never enter Git or the build.
+preview.json
+*.preview.json
+*.partial
+local-preview/
+ai-readi-preview/
+/data/
+Datasets/
+
+# Local review state and working notes
+.herenow/
+.hermes/
+.local-notes/
+.local-assets/
+artifacts/
+coverage/
+*.log
+*.zip
+*.tar.gz
+
+.ruff_cache/
+.pytest_cache/

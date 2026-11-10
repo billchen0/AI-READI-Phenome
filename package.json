@@ -1,0 +1,42 @@
+{
+  "name": "ai-readi-phenome",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit",
+    "preview": "vite preview",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test:ecg": "node --experimental-strip-types --test tests/ecg.test.ts",
+    "format": "prettier --write src scripts tests vite.config.ts index.html package.json tsconfig.json docs README.md",
+    "format:check": "prettier --check src scripts tests vite.config.ts index.html package.json tsconfig.json docs README.md",
+    "test:python": "python3 -m unittest discover -s tests -p 'test_*.py'",
+    "test:anatomy": "node --experimental-strip-types scripts/audit_anatomy.mjs",
+    "check": "npm run check:repository && npm run format:check && npm test && npm run build && npm run test:anatomy",
+    "check:repository": "node scripts/check-repository.mjs"
+  },
+  "dependencies": {
+    "@react-three/drei": "^10.7.9",
+    "@react-three/fiber": "^9.8.2",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "three": "^0.186.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@types/three": "^0.186.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "prettier": "^3.6.2",
+    "three-mesh-bvh": "^0.8.3",
+    "typescript": "^5.9.3",
+    "vite": "^8.3.4"
+  },
+  "description": "Interactive 3D showcase of AI-READI measurement domains",
+  "engines": {
+    "node": ">=22.18"
+  }
+}

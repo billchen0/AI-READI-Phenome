@@ -1,0 +1,8 @@
+Asset: human-base-rigged.glb
+Title: Human base mesh with editable 53-bone rig
+Source: https://www.innerscene.com/tools/library/3d-parts/human-base-mesh-with-editable-53-bone-rig-8e7c8ab1
+Downloaded from: https://www.innerscene.com/api/library/human-base-mesh-with-editable-53-bone-rig-8e7c8ab1/download
+Creator: Innerscene, based on MakeHuman/MPFB CC0 body, rig and skin assets.
+License: CC0 / public domain dedication. The source page states free use, modification and redistribution, including commercial use, with no credit required.
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Note: This license covers only the mannequin asset; it does not change the AI-READI dataset's separate usage restrictions. The model is a neutral geometry asset, not a real person or anatomical evidence.

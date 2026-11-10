@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.venv/
+.local-notes/
+.local-assets/
+.agent-context/
+.herenow/
+package-lock.json
+public/assets/
